@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Harmony Heritage Museum - Account</title>
+        <link rel="stylesheet" href="acc.css">
+    </head>
+    <body>
+
+        <div class="account-box">
+           
+                <a href="index.html"><button type="button" class="backBtn">Back</button></a>
+            <div class="logo">
+                <img src="harmony-round-removebg-preview.png" alt="">
+                <div class="museum-tittle">
+                    <h1>Harmony</h1>
+                    <p><small>Heritage Museum</small></p>
+                </div>
+            </div>
+            <div class="info">
+                <h1>Welcome Back!</h1>
+                <p>Sign in to explore Khmer heritage<br>and manage your museum tickets.</p>
+            </div>
+            <div class="account-header">
+                <h1>Account</h1>
+                <span class="underline"></span>
+            </div>
+
+            <!-- Toggle tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" id="signinTab">Sign In</button>
+                <button class="tab-btn" id="signupTab">Sign Up</button>
+                
+            </div>
+
+            <!-- Sign In Form -->
+            <form id="signinForm" class="auth-form">
+                <label for="siEmail">Email</label>
+                <input type="email" id="siEmail" required>
+
+                <label for="siPassword">Password</label>
+                <input type="password" id="siPassword" required>
+
+                <button type="submit" class="submitBtn">Sign In</button>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form id="signupForm" class="auth-form hidden">
+                <label for="suName">Full Name</label>
+                <input type="text" id="suName" required>
+
+                <label for="suEmail">Email</label>
+                <input type="email" id="suEmail" required>
+
+                <label for="suPassword">Password</label>
+                <input type="password" id="suPassword" required>
+
+                <button type="submit" class="submitBtn">Create Account</button>
+        
+            </form>
+
+            <!-- Profile Display (hidden until "logged in") -->
+            <div id="profileView" class="profile-view hidden">
+                <div class="avatar">👤</div>
+                <h2 id="profileName">Guest</h2>
+                <p id="profileEmail">guest@example.com</p>
+                <button id="logoutBtn" class="submitBtn logoutBtn">Log Out</button>
+              
+            </div>
+        </div>
+
+        <script src="acc.js"></script>
+    </body>
+</html>

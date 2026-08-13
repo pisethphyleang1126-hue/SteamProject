@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony Heritage Musuem - Purchase Ticket</title>
+    <link rel="icon" href="harmony-round.png">
+    <link rel="stylesheet" href="buy-ticket.css">
+   
+</head>
+<body>
+    <form action="">
+        <div class="logo">
+            <img src="harmony-round.png" alt="">
+            <div class="museum-tittle">
+                <h1>Harmony</h1>
+                <p><small>Heritage Museum</small></p>
+            </div>
+        </div>
+        <h2>Purchase Your Ticket</h2>
+    
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+    
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+    
+        <label for="date">Visit Date</label>
+        <input type="date" id="date" name="date" required>
+    
+        <label for="ticketType">Ticket Type</label>
+        <select id="ticketType" name="ticketType">
+            <option value="standard">Standard - $5</option>
+            <option value="student">Student - $3</option>
+            <option value="child">Child - Free</option>
+        </select>
+    
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1">
+    
+        <button type="submit">Purchase Ticket</button>
+        <a href="index.html"><button type="button" class="backBtn" style="transform: translateX(270px);">Back</button></a>
+    </form>
+</body>
+</html>

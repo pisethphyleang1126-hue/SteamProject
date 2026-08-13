@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Harmony Heritage Musuem</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="icon" href="harmony-round.png">
+        <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Bayon&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Hanuman:wght@100..900&family=Montenegrin+Gothic+One&family=Moul&family=Noto+Sans+Khmer:wght@100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="harmony-round-removebg-preview.png" alt="">
+                    <div class="museum-tittle">
+                        <h1>Harmony</h1>
+                        <p><small>Heritage Museum</small></p>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#aboutus">About us</a></li>
+                    <li><a href="#arch">Architecture</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="acc.html">Acount</a></li>
+                    <li><a href="buy-ticket.html">Get ticket</a></li>
+                </ul>
+                <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+                    ☰
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="home" id="home">
+                <div class="sound-toggle" id="soundToggle">
+                    <i class="ti ti-volume-3"></i>
+                </div>
+                <h1
+                    style="transform: translateY(30px);">
+                    Welcome to our</h1>
+                <h1
+                    style="transform: translateY(30px);">
+                    Museum</h1>
+                <div class="greeting" style="position: relative; width: 400px; height: 400px;;">
+                    <svg width="300" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"
+                        style="position: absolute; top: 10px; left: 10px; ">
+                        <defs>
+                            <mask id="crescent-cutout">
+                                <rect x="0" y="0" width="350" height="400" fill="white" />
+                                <!-- move cutout circle closer to the main circle to make a thinner crescent -->
+                                <circle cx="260" cy="180" r="185" fill="black" />
+                            </mask>
+                        </defs>
+                        <!-- main gold circle -->
+                        <circle cx="170" cy="200" r="170" fill="#bb9c5d" mask="url(#crescent-cutout)" />
+                    </svg>
+
+                    <img src="harmony-round-removebg-preview.png" alt=""
+                        style="position: absolute; top: 10px; left: -25px; width: 450px; height: 500px; object-fit: contain;" />
+                </div>
+                <div class="home-quote" style="margin-top: 60px;">
+                    <p>Where <b>Modernity</b> & <b>Traditionality</b> are align</p>
+                </div>
+                <div class="scroll-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </div>
+            <div class="about-us" id="aboutus">
+                <div class="about-container">
+                    <h1 style="transform: translateY(-20px);">Expectation</h1>
+                    <h2>Welcome to Harmony Heritage Museum</h2>
+                    <p class="about-tagline">Where Khmer heritage meets modern innovation.</p>
+
+                    <p class="about-text">
+                        Our museum is more than a place to display history. It is a space where visitors can discover
+                        Cambodia's rich culture, traditional art, and historical treasures through a modern and
+                        interactive
+                        experience.
+                    </p>
+                    <p class="about-text">
+                        The museum's design combines traditional Khmer architecture with contemporary technology,
+                        creating
+                        a unique landmark that represents both our past and our future.
+                    </p>
+                    <p class="about-text">
+                        To ensure the safety of priceless artifacts, the museum is equipped with a
+                        <b>PIR Motion Sensor Security System</b>, which helps detect unauthorized movement and provides
+                        reliable protection for valuable cultural objects.
+                    </p>
+
+                    <div class="about-grid">
+                        <div class="about-why">
+                            <h3>Why visit our museum?</h3>
+                            <ul>
+                                <li>Discover the beauty of Khmer history and culture</li>
+                                <li>Experience modern museum technology</li>
+                                <li>Learn through interactive exhibitions</li>
+                                <li>Enjoy a safe, comfortable, and secure environment</li>
+                                <li>Support the preservation of Cambodia's cultural heritage</li>
+                            </ul>
+                        </div>
+
+                        <div class="about-vision">
+                            <h3>Our vision</h3>
+                            <p>
+                                To become a leading cultural destination that preserves Cambodia's heritage while
+                                embracing
+                                innovation and inspiring future generations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="about-slogan">"Preserving Our Past, Inspiring Our Future."</p>
+                </div>
+            </div>
+        </main>
+        <script src="index.js"></script>
+    </body>
+</html>
