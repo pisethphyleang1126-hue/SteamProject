@@ -154,8 +154,6 @@ header {
         background-color: #bb9c5d;
     }
 
-
-
     .nav-links a:hover::after {
         width: 100%;
     }
@@ -514,8 +512,6 @@ main .home::before {
     }
 }
 
-
-
 main .home h1 {
     opacity: 0;
     color: hsl(40, 45%, 55%);
@@ -560,4 +556,218 @@ main .home .greeting,
 
 .play-left {
     animation: slideFromLeft 1.2s ease-out 1.4s forwards;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background-color: hsl(60, 26%, 89%);
+}
+
+/* ===== reused header just for context ===== */
+
+header h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 20px;
+}
+
+header p {
+    color: #bb9c5d;
+    font-size: 12px;
+    font-family: 'Lora', serif;
+}
+
+/* ===== museum info section ===== */
+.museum-info {
+    width: 90%;
+    margin: auto;
+    padding: 70px 20px 90px;
+    background: linear-gradient(135deg, #fdf6e3 0%, #ffffff 50%, #ddd6bf 100%);
+}
+
+.info-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.info-header .section-label {
+    color: #bb9c5d;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+
+.info-header h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: #0d1b2a;
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.info-header .about-tagline {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: #bb9c5d;
+    font-size: 18px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.info-card {
+    background: #ffffff;
+    border: 1px solid #e8ddc5;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(187, 156, 93, 0.25);
+}
+
+.info-card.featured {
+    border: 1px solid #bb9c5d;
+}
+
+.info-img-placeholder {
+    width: 100%;
+    height: 180px;
+    background: repeating-linear-gradient(135deg,
+            #f4ecd8,
+            #f4ecd8 10px,
+            #efe4c8 10px,
+            #efe4c8 20px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-img-placeholder.large {
+    height: 220px;
+}
+
+.info-img-placeholder::after {
+    content: attr(data-caption);
+    font-family: 'Lora', Georgia, serif;
+    font-size: 13px;
+    color: #bb9c5d;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px dashed #bb9c5d;
+    text-align: center;
+}
+
+.info-card h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0d1b2a;
+    font-size: 17px;
+    padding: 18px 20px 8px;
+}
+
+.khmer-tag {
+    font-family: 'Noto Sans Khmer', sans-serif;
+    color: #bb9c5d;
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 6px;
+}
+
+.info-card p {
+    font-family: 'Lora', Georgia, serif;
+    color: #333;
+    font-size: 14.5px;
+    line-height: 1.7;
+    padding: 0 20px 20px;
+}
+
+.info-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 50px;
+    text-align: left;
+}
+
+.info-footer-item {
+    background: #ffffff;
+    border: 1px solid #e8ddc5;
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.info-footer-item h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0d1b2a;
+    font-size: 18px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid #bb9c5d;
+    padding-bottom: 8px;
+}
+
+.info-footer-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-footer-item li {
+    font-family: 'Lora', Georgia, serif;
+    color: #333;
+    font-size: 15px;
+    margin-bottom: 10px;
+    padding-left: 22px;
+    position: relative;
+}
+
+.info-footer-item li::before {
+    content: "✦";
+    color: #bb9c5d;
+    position: absolute;
+    left: 0;
+}
+
+.info-footer-item p {
+    font-family: 'Lora', Georgia, serif;
+    color: #333;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-footer {
+        grid-template-columns: 1fr;
+    }
 }
