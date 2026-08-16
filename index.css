@@ -648,9 +648,9 @@ header p {
 }
 
 .info-card.featured {
-    border: 1px solid #bb9c5d;
+    border: 1px solid #e8ddc5;
 }
-
+/* #bb9c5d */
 .info-img-placeholder {
     width: 100%;
     height: 180px;
@@ -770,4 +770,38 @@ header p {
     .info-footer {
         grid-template-columns: 1fr;
     }
+}
+.translate{
+    width: 70px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: hsl(41, 43%, 84%);
+    border-radius: 5px;
+    border: 1px solid #c78e14;
+    color: #0d1b2a;
+    margin-bottom: 10px;
+}
+.translate:hover{
+    background-color: hsl(41, 43%, 94%);
+}
+/* Khmer title */
+.info-card h3.khmer-title {
+    font-family: "Moul", serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0d1b2a;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+}
+
+/* Khmer paragraph */
+.info-card p.khmer-text {
+    font-family: "Battambang", system-ui;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    line-height: 2;
+    padding: 0 20px 20px;
+    letter-spacing: 0.5px;
 }
