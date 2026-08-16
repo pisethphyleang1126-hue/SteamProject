@@ -24,6 +24,7 @@ header {
     width: 100%;
     z-index: 1000;
     border: 1px solid #bb9c5d;
+
 }
 
 .navbar {
@@ -31,7 +32,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background: hwb(42 84% 9%);
+    background: hsl(40, 41%, 85%);
     color: #fff;
 }
 
@@ -121,11 +122,12 @@ header {
         position: absolute;
         top: 65px;
         right: 5px;
-        background: hsl(0, 0%, 60%);
+        background: hsl(40, 41%, 85%);
         width: 100px;
         border-radius: 10px;
         line-height: 5px;
         padding: 10px 0px;
+        border: 1px #c78e14 solid;
     }
 
     .nav-links li {
@@ -149,7 +151,7 @@ header {
         height: 1.5px;
         width: 0;
         transition: width 0.5s ease-in-out;
-        background-color: azure;
+        background-color: #bb9c5d;
     }
 
 
@@ -196,6 +198,7 @@ main .home::before {
     pointer-events: none;
     z-index: 0;
 }
+
 .home h1 {
     font-family: Arial, Helvetica, sans-serif;
     color: black;
@@ -218,6 +221,7 @@ main .home::before {
     font-weight: 700;
     font-style: normal;
 }
+
 main .home img {
     margin: auto;
 }
@@ -262,24 +266,24 @@ main .home .greeting svg {
 
 main .home::before {
     content: "";
-        position: absolute;
-        inset: 0;
-        background-image:
-            radial-gradient(2.5px 2.5px at 50px 60px, #fff8dc, transparent),
-            radial-gradient(3px 3px at 180px 40px, #d99f17, transparent),
-            radial-gradient(2.5px 2.5px at 260px 180px, #c78e14, transparent),
-            radial-gradient(3px 3px at 340px 90px, #fff8dc, transparent),
-            radial-gradient(2px 2px at 110px 220px, #ffd700, transparent),
-            radial-gradient(3px 3px at 400px 250px, #ffe066, transparent),
-            radial-gradient(2px 2px at 30px 200px, #fff8dc, transparent),
-            radial-gradient(2.5px 2.5px at 220px 260px, #ffd700, transparent),
-            radial-gradient(2px 2px at 150px 130px, #ea8b0f, transparent);
-        background-repeat: repeat;
-        background-size: 300px 300px;
-        filter: drop-shadow(0 0 6px #ffd700) drop-shadow(0 0 3px #fff8dc);
-        animation: twinkle 2.5s ease-in-out infinite;
-        pointer-events: none;
-        z-index: 0;
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(2.5px 2.5px at 50px 60px, #fff8dc, transparent),
+        radial-gradient(3px 3px at 180px 40px, #d99f17, transparent),
+        radial-gradient(2.5px 2.5px at 260px 180px, #c78e14, transparent),
+        radial-gradient(3px 3px at 340px 90px, #fff8dc, transparent),
+        radial-gradient(2px 2px at 110px 220px, #ffd700, transparent),
+        radial-gradient(3px 3px at 400px 250px, #ffe066, transparent),
+        radial-gradient(2px 2px at 30px 200px, #fff8dc, transparent),
+        radial-gradient(2.5px 2.5px at 220px 260px, #ffd700, transparent),
+        radial-gradient(2px 2px at 150px 130px, #ea8b0f, transparent);
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    filter: drop-shadow(0 0 6px #ffd700) drop-shadow(0 0 3px #fff8dc);
+    animation: twinkle 2.5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .about-us {
@@ -289,7 +293,7 @@ main .home::before {
     background: linear-gradient(135deg, #ddd6bf 0%, #ffffff 50%, #e0d7ba 100%);
     display: flex;
     justify-content: center;
-    
+
 }
 
 .about-container {
@@ -398,6 +402,7 @@ main .home::before {
         grid-template-columns: 1fr;
     }
 }
+
 .scroll-indicator {
     position: absolute;
     bottom: 30px;
@@ -451,6 +456,7 @@ main .home::before {
         transform: rotate(45deg) translate(12px, 12px);
     }
 }
+
 .sound-toggle {
     position: fixed;
     bottom: 30px;
@@ -468,6 +474,7 @@ main .home::before {
     font-size: 20px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
+
 /* Entrance animations */
 @keyframes riseUp {
     from {
@@ -485,7 +492,7 @@ main .home::before {
     from {
         opacity: 0;
         transform: translateX(80px);
-      
+
     }
 
     to {
@@ -498,7 +505,7 @@ main .home::before {
     from {
         opacity: 0;
         transform: translateX(-80px);
-      
+
     }
 
     to {
@@ -507,15 +514,19 @@ main .home::before {
     }
 }
 
+
+
 main .home h1 {
     opacity: 0;
-    animation: slideFromRight 1.2s ease-out forwards;
-   
+    color: hsl(40, 45%, 55%);
+    animation: slideFromRight 1.2s ease-out forwards,
+        /* jump 2s ease-in-out 2s infinite; */
 }
 
 /* stagger the second heading line slightly after the first */
 main .home h1:nth-of-type(2) {
-    animation-delay: 0.3s;
+    animation: slideFromRight 1.2s ease-out 0.3s forwards,
+        /* jump 2s ease-in-out 2s infinite; */
 }
 
 main .home .greeting {
@@ -528,6 +539,7 @@ main .home .greeting {
     animation: slideFromLeft 1.2s ease-out 1.4s forwards;
 
 }
+
 main .home h1,
 main .home .greeting,
 .home-quote p {
