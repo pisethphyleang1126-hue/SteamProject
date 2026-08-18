@@ -1,0 +1,444 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 50% 20%,
+            rgba(187, 156, 93, 0.18),
+            transparent 35%),
+        #e9e2cf;
+
+    font-family: "Lora", Georgia, serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.ticket-page {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+/* =========================
+   TICKET
+========================= */
+
+.ticket {
+    position: relative;
+
+    width: 430px;
+    max-width: 100%;
+    height: 900px;
+    background: #fffdf8;
+
+    border: 1px solid #bb9c5d;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 50px rgba(80, 65, 30, 0.18),
+        0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   TOP
+========================= */
+
+.ticket-top {
+    position: relative;
+
+    text-align: center;
+
+    padding: 38px 30px 28px;
+
+    background:
+        linear-gradient(180deg,
+            #f4ead4 0%,
+            #fffdf8 100%);
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   CRESCENT MOON
+========================= */
+
+.crescent {
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    background: #bb9c5d;
+
+    top: -95px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    opacity: 0.18;
+}
+
+
+.crescent::after {
+    content: "";
+
+    position: absolute;
+
+    width: 175px;
+    height: 175px;
+
+    border-radius: 50%;
+
+    background: #f4ead4;
+
+    top: -8px;
+    left: 38px;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.museum-logo {
+    position: relative;
+
+    width: 95px;
+    height: 95px;
+
+    object-fit: contain;
+
+    z-index: 2;
+
+    margin-bottom: 5px;
+}
+
+
+.ticket-top h1 {
+    position: relative;
+
+    z-index: 2;
+
+    font-family: "Bodoni Moda", serif;
+
+    font-size: 36px;
+
+    font-weight: 600;
+
+    color: #222;
+
+    letter-spacing: 2px;
+}
+
+
+.museum-name {
+    position: relative;
+
+    z-index: 2;
+
+    color: #bb9c5d;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    margin-top: -3px;
+}
+
+
+/* =========================
+   GOLD LINE
+========================= */
+
+.gold-line {
+    width: 90px;
+
+    height: 1px;
+
+    background: #bb9c5d;
+
+    margin: 18px auto;
+}
+
+
+.ticket-top h2 {
+    font-family: "Nunito", sans-serif;
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    font-weight: 700;
+
+    color: #0d1b2a;
+}
+
+
+/* =========================
+   INFO
+========================= */
+
+.ticket-info {
+    padding: 25px 30px 10px;
+}
+
+
+.info-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid #eadfc7;
+}
+
+
+.info-item {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.info-item span {
+    font-family: "Nunito", sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #bb9c5d;
+}
+
+
+.info-item strong {
+    font-family: "Lora", serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #222;
+}
+
+
+/* =========================
+   QR
+========================= */
+
+.qr-section {
+    text-align: center;
+
+    padding: 25px 20px 20px;
+}
+
+
+#qrcode {
+    width: 170px;
+    height: 170px;
+
+    background: white;
+
+    padding: 10px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #e4d6b8;
+}
+
+
+#qrcode img {
+    display: block;
+
+    width: 150px;
+    height: 150px;
+}
+
+
+.qr-section p {
+    font-family: "Nunito", sans-serif;
+
+    color: #222;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-top: 15px;
+}
+
+
+.qr-section small {
+    display: block;
+
+    color: #8b836f;
+
+    font-size: 11px;
+
+    margin-top: 6px;
+}
+
+
+/* =========================
+   BOTTOM
+========================= */
+
+.ticket-bottom {
+    text-align: center;
+
+    padding: 20px 25px 28px;
+
+    background: #f8f1df;
+}
+
+
+.bottom-line {
+    width: 100%;
+
+    height: 1px;
+
+    background:
+        repeating-linear-gradient(90deg,
+            #bb9c5d 0,
+            #bb9c5d 8px,
+            transparent 8px,
+            transparent 14px);
+
+    margin-bottom: 18px;
+}
+
+
+.ticket-bottom p {
+    font-family: "Bodoni Moda", serif;
+
+    font-style: italic;
+
+    font-size: 13px;
+
+    color: #514a3b;
+}
+
+
+.ticket-bottom span {
+    display: block;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    color: #9b8d6f;
+
+    margin-top: 8px;
+}
+
+
+/* =========================
+   DECORATIVE CUTOUTS
+========================= */
+
+.ticket::before,
+.ticket::after {
+    content: "";
+
+    position: absolute;
+
+    width: 28px;
+    height: 28px;
+
+    background: #e9e2cf;
+
+    border-radius: 50%;
+
+    top: 59%;
+
+    z-index: 5;
+}
+
+
+.ticket::before {
+    left: -15px;
+}
+
+
+.ticket::after {
+    right: -15px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 20px 12px;
+    }
+
+    .ticket {
+        width: 100%;
+    }
+
+    .ticket-top {
+        padding-top: 30px;
+    }
+
+    .museum-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .ticket-top h1 {
+        font-size: 31px;
+    }
+
+    .ticket-info {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .info-row {
+        gap: 10px;
+    }
+
+}

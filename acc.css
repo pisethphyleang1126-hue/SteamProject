@@ -105,7 +105,9 @@ body {
 }
 
 .submitBtn:hover {
-    background-color: #0d1b2a;
+    background-color: azure;
+    color: #bb9c5d;
+    border: 1px solid #bb9c5d;
 }
 
 .hidden {
@@ -212,7 +214,9 @@ button .backBtn {
 }
 
 button .backBtn:hover {
-    background-color: #0d1b2a;
+    background-color: azure;
+    color: #bb9c5d;
+    border: 1px solid #bb9c5d;
 }
 
 .account-box {
@@ -233,8 +237,12 @@ button .backBtn:hover {
     font-size: 13px;
     cursor: pointer;
     transition: background-color 0.3s;
+    transform: translateY(585px);
 }
 
 .backBtn:hover {
-    background-color: #0d1b2a;
+    background-color: azure;
+    color: #bb9c5d;
+    border: 1px solid #bb9c5d;
+    
 }

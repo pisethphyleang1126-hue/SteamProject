@@ -1,45 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harmony Heritage Musuem - Purchase Ticket</title>
-    <link rel="icon" href="harmony-round.png">
-    <link rel="stylesheet" href="buy-ticket.css">
-   
-</head>
-<body>
-    <form action="">
-        <div class="logo">
-            <img src="harmony-round.png" alt="">
-            <div class="museum-tittle">
-                <h1>Harmony</h1>
-                <p><small>Heritage Museum</small></p>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Harmony Heritage Museum - Purchase Ticket</title>
+
+        <link rel="icon" href="harmony-round.png">
+        <link rel="stylesheet" href="buy-ticket.css">
+    </head>
+
+    <body>
+
+        <form id="ticketForm">
+
+            <div class="logo">
+                <img src="harmony-round.png" alt="Harmony Heritage Museum">
+
+                <div class="museum-tittle">
+                    <h1>Harmony</h1>
+                    <p><small>Heritage Museum</small></p>
+                </div>
             </div>
-        </div>
-        <h2>Purchase Your Ticket</h2>
-    
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required>
-    
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-    
-        <label for="date">Visit Date</label>
-        <input type="date" id="date" name="date" required>
-    
-        <label for="ticketType">Ticket Type</label>
-        <select id="ticketType" name="ticketType">
-            <option value="standard">Standard - $5</option>
-            <option value="student">Student - $3</option>
-            <option value="child">Child - Free</option>
-        </select>
-    
-        <label for="quantity">Quantity</label>
-        <input type="number" id="quantity" name="quantity" min="1" value="1">
-    
-        <button type="submit">Purchase Ticket</button>
-        <a href="index.html"><button type="button" class="backBtn" style="transform: translateX(270px);">Back</button></a>
-    </form>
-</body>
+
+            <h2>Purchase Your Ticket</h2>
+
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required>
+
+
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+
+
+            <label for="date">Visit Date</label>
+            <input type="date" id="date" required>
+
+
+            <label for="time">Visit Time</label>
+            <input type="time" id="time" required>
+
+
+            <label for="ticketType">Ticket Type</label>
+
+            <select id="ticketType" required>
+                <option value="standard" data-price="5">
+                    Standard - $5
+                </option>
+
+                <option value="student" data-price="3">
+                    Student - $3
+                </option>
+
+                <option value="child" data-price="0">
+                    Child - Free
+                </option>
+            </select>
+
+
+            <label for="quantity">Quantity</label>
+
+            <input type="number" id="quantity" min="1" value="1" required>
+
+
+            <div class="total">
+                Total: $<span id="total">5.00</span>
+            </div>
+
+
+            <button type="submit">
+                Purchase Ticket
+            </button>
+
+            <a href="index.html">
+                <button type="button" class="backBtn">
+                    Back
+                </button>
+            </a>
+
+        </form>
+
+
+        <script>
+
+            const form = document.getElementById("ticketForm");
+
+            const ticketType = document.getElementById("ticketType");
+
+            const quantity = document.getElementById("quantity");
+
+            const total = document.getElementById("total");
+
+
+            // Calculate total price
+            function calculateTotal() {
+
+                const price =
+                    Number(
+                        ticketType.options[
+                            ticketType.selectedIndex
+                        ].dataset.price
+                    );
+
+                const amount = Number(quantity.value);
+
+                total.textContent =
+                    (price * amount).toFixed(2);
+            }
+
+
+            ticketType.addEventListener(
+                "change",
+                calculateTotal
+            );
+
+            quantity.addEventListener(
+                "input",
+                calculateTotal
+            );
+
+
+            // Send customer information to ticket page
+            form.addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById("name").value;
+
+                const email =
+                    document.getElementById("email").value;
+
+                const date =
+                    document.getElementById("date").value;
+
+                const time =
+                    document.getElementById("time").value;
+
+                const type =
+                    ticketType.options[
+                        ticketType.selectedIndex
+                    ].text;
+
+                const price =
+                    Number(
+                        ticketType.options[
+                            ticketType.selectedIndex
+                        ].dataset.price
+                    );
+
+                const qty =
+                    Number(quantity.value);
+
+                const totalPrice =
+                    price * qty;
+
+
+                // Generate ticket number
+                const ticketNumber =
+                    "HHM-" +
+                    Date.now().toString().slice(-8);
+
+
+                // Store information
+                const ticketData = {
+
+                    name: name,
+
+                    email: email,
+
+                    date: date,
+
+                    time: time,
+
+                    type: type,
+
+                    quantity: qty,
+
+                    total: totalPrice.toFixed(2),
+
+                    ticketNumber: ticketNumber
+
+                };
+
+
+                localStorage.setItem(
+                    "harmonyTicket",
+                    JSON.stringify(ticketData)
+                );
+
+
+                // Go to ticket page
+                window.location.href = "ticket.html";
+
+            });
+
+        </script>
+
+    </body>
+
 </html>

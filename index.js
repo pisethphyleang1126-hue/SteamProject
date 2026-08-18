@@ -159,3 +159,4 @@ Object.keys(translations).forEach(function (buttonId) {
     };
 
 });
+document.getElementById('footer-year').textContent = new Date().getFullYear();

@@ -56,7 +56,9 @@ form button {
 }
 
 form button:hover {
-    background-color: #0d1b2a;
+    background-color: azure;
+    color: #bb9c5d;
+    border: 1px solid #bb9c5d;
 }
 form .logo{
     display: flex;
@@ -81,4 +83,7 @@ form .logo .museum-tittle p {
     font-size: 14px;
     text-indent: 5px;
     font-family: 'Lora', Georgia, serif;
+}
+.backBtn{
+    transform: translateX(270px);
 }

@@ -650,6 +650,7 @@ header p {
 .info-card.featured {
     border: 1px solid #e8ddc5;
 }
+
 /* #bb9c5d */
 .info-img-placeholder {
     width: 100%;
@@ -663,10 +664,49 @@ header p {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .info-img-placeholder.large {
-    height: 220px;
+    height: 260px;
+}
+
+.info-img-placeholder {
+    width: 100%;
+    height: 260px;
+    /* was 180px */
+    overflow: hidden;
+    /* add this line */
+    background: repeating-linear-gradient(135deg,
+            #f4ecd8,
+            #f4ecd8 10px,
+            #efe4c8 10px,
+            #efe4c8 20px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.threedimg {
+    width: 100%;
+    height: 100%;
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+}
+
+.info-img-placeholder:has(.threedimg)::after {
+    display: none;
+}
+
+
+
+
+
+.info-img-placeholder:has(img)::after {
+    display: none;
 }
 
 .info-img-placeholder::after {
@@ -771,7 +811,8 @@ header p {
         grid-template-columns: 1fr;
     }
 }
-.translate{
+
+.translate {
     width: 70px;
     padding: 5px 10px;
     margin-left: 10px;
@@ -782,9 +823,11 @@ header p {
     color: #0d1b2a;
     margin-bottom: 10px;
 }
-.translate:hover{
+
+.translate:hover {
     background-color: hsl(41, 43%, 94%);
 }
+
 /* Khmer title */
 .info-card h3.khmer-title {
     font-family: "Moul", serif;
@@ -804,4 +847,107 @@ header p {
     line-height: 2;
     padding: 0 20px 20px;
     letter-spacing: 0.5px;
+}
+
+.site-footer {
+    background: hsl(60, 26%, 89%);
+    color: #e8e2d0;
+    margin-top: 0px;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px 40px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-brand .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.footer-brand .footer-logo img {
+    width: 44px;
+}
+
+.footer-brand .footer-logo h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0d1b2a;
+    font-size: 20px;
+}
+
+.footer-brand .footer-logo p {
+    font-family: 'Lora', Georgia, serif;
+    color: #222;
+    font-size: 13px;
+}
+
+.footer-tagline {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    color: #333;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 280px;
+}
+
+.footer-links h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0d1b2a;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 14px;
+    color: #222;
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #bb9c5d;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(187, 156, 93, 0.25);
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 13px;
+    color: #8a8470;
+}
+
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
 }

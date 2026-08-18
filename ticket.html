@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Harmony Heritage Museum - Ticket</title>
+
+        <link rel="icon" href="harmony-round-removebg-preview.png">
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lora:wght@400;500;600&family=Nunito:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+
+        <link rel="stylesheet" href="ticket.css">
+
+
+        <!-- QR CODE -->
+        <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js">
+        </script>
+
+    </head>
+
+
+    <body>
+
+        <main class="ticket-page">
+
+            <div class="ticket">
+
+
+                <!-- TOP -->
+
+                <div class="ticket-top">
+
+                    <div class="crescent"></div>
+
+
+                    <img src="harmony-round-removebg-preview.png" class="museum-logo" alt="Harmony Heritage Museum">
+
+
+                    <h1>Harmony</h1>
+
+
+                    <p class="museum-name">
+                        HERITAGE MUSEUM
+                    </p>
+
+
+                    <div class="gold-line"></div>
+
+
+                    <h2>
+                        ADMISSION TICKET
+                    </h2>
+
+                </div>
+
+
+
+                <!-- CUSTOMER INFORMATION -->
+
+                <div class="ticket-info">
+
+
+                    <div class="info-row">
+
+                        <div class="info-item">
+
+                            <span>
+                                VISITOR
+                            </span>
+
+                            <strong id="visitorName">
+                                Guest Visitor
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span>
+                                TICKET TYPE
+                            </span>
+
+                            <strong id="ticketType">
+                                General Admission
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="info-row">
+
+                        <div class="info-item">
+
+                            <span>
+                                EMAIL
+                            </span>
+
+                            <strong id="visitorEmail">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span>
+                                QUANTITY
+                            </span>
+
+                            <strong id="ticketQuantity">
+                                1
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="info-row">
+
+                        <div class="info-item">
+
+                            <span>
+                                VISIT DATE
+                            </span>
+
+                            <strong id="visitDate">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span>
+                                TIME
+                            </span>
+
+                            <strong id="visitTime">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="info-row">
+
+                        <div class="info-item">
+
+                            <span>
+                                TICKET NO.
+                            </span>
+
+                            <strong id="ticketNumber">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span>
+                                TOTAL
+                            </span>
+
+                            <strong>
+                                $<span id="ticketPrice">0.00</span>
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- QR CODE -->
+
+                <div class="qr-section">
+
+                    <div id="qrcode"></div>
+
+
+                    <p>
+                        SCAN TO VERIFY TICKET
+                    </p>
+
+
+                    <small>
+                        Present this QR code at the museum entrance.
+                    </small>
+
+                </div>
+
+
+
+                <!-- BOTTOM -->
+
+                <div class="ticket-bottom">
+
+                    <div class="bottom-line"></div>
+
+
+                    <p>
+                        Preserving Our Past, Inspiring Our Future.
+                    </p>
+
+
+                    <span>
+                        Harmony Heritage Museum • Cambodia
+                    </span>
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+
+        <script>
+
+            // Get saved ticket information
+            const savedTicket =
+                localStorage.getItem("harmonyTicket");
+
+
+            // If there is no ticket
+            if (!savedTicket) {
+
+                alert("No ticket information found.");
+
+                window.location.href =
+                    "buy-ticket.html";
+
+            }
+
+
+            const ticket =
+                JSON.parse(savedTicket);
+
+
+            // Display customer information
+
+            document.getElementById(
+                "visitorName"
+            ).textContent =
+                ticket.name;
+
+
+            document.getElementById(
+                "visitorEmail"
+            ).textContent =
+                ticket.email;
+
+
+            document.getElementById(
+                "visitDate"
+            ).textContent =
+                ticket.date;
+
+
+            document.getElementById(
+                "visitTime"
+            ).textContent =
+                ticket.time;
+
+
+            document.getElementById(
+                "ticketType"
+            ).textContent =
+                ticket.type;
+
+
+            document.getElementById(
+                "ticketQuantity"
+            ).textContent =
+                ticket.quantity;
+
+
+            document.getElementById(
+                "ticketNumber"
+            ).textContent =
+                ticket.ticketNumber;
+
+
+            document.getElementById(
+                "ticketPrice"
+            ).textContent =
+                ticket.total;
+
+
+
+            // QR CODE DATA
+
+            const qrData =
+
+                "Harmony Heritage Museum\n" +
+
+                "Ticket: " +
+                ticket.ticketNumber + "\n" +
+
+                "Visitor: " +
+                ticket.name + "\n" +
+
+                "Email: " +
+                ticket.email + "\n" +
+
+                "Date: " +
+                ticket.date + "\n" +
+
+                "Time: " +
+                ticket.time + "\n" +
+
+                "Type: " +
+                ticket.type + "\n" +
+
+                "Quantity: " +
+                ticket.quantity + "\n" +
+
+                "Total: $" +
+                ticket.total;
+
+
+            new QRCode(
+                document.getElementById("qrcode"),
+                {
+                    text: qrData,
+
+                    width: 150,
+
+                    height: 150,
+
+                    colorDark: "#222222",
+
+                    colorLight: "#ffffff",
+
+                    correctLevel:
+                        QRCode.CorrectLevel.H
+                }
+            );
+
+        </script>
+
+    </body>
+
+</html>
