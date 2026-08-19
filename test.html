@@ -17,6 +17,11 @@
 
         <link rel="stylesheet" href="ticket.css">
 
+
+
+        <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js">
+        </script>
+
     </head>
 
 
@@ -190,10 +195,7 @@
 
                 <div class="qr-section">
 
-                    <div id="qrcode">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZoAAAGaAQAAAAAefbjOAAADZklEQVR4nO1bW26jUAy1c5HySaQsoEshO6u6pNkBLKULqASfkUAeHdsX0vanTJAoc31UUV5WuMayfWzDQqvRndbLEIWQIxThCEU4QhGOUIQjFOEIRRxJEeyofO82VEQd5w0N+YbbLo+3EiH0jCJIAGr0X5+wHUlaSkKNHS4X8n1tqNzxPyticAdgXqDpJ5a3C3jFZWK9QT3Ibo+3CiH0jCKqL8dClISbP2lkqj9gDOfv/DRUXpIiOq5I3tQzDGcEjN/1eD9BCG2hiBr5wUPUSOYZ+FaPdk4TjC1+aRVCaC9FdMokkDg0/WIW2IJ1EE1GNfZ6vHUIoefzCJmPhYZlb2IhgmeoP+cSofIC2GcPftkTiCfOYU9TiAZkVBkpKGiwz1IsQswYan3xn3MGQO0FV8MiyqlZXpLw63uFFCKJVSrVPaiVvL3AQIaZhx5iTSsRQhm5LDni7YNw1EsQ8Q0R3AM2dmvULAuJGoTilL14rWIbNFbkSBIWUQ77fMmOYilJIWpQ856rmt0l09KDrGkdQshh75uJqlGrDdLdiLjpr6hR4BA1CqrHSvMIL0iE9qiAqJFALee2p7qHTDf9TmQZkUeUEzXuTB2fhV/lztIar9C258SWR7R2uMvjrUMIbdINP3vFwcIE3r7vaQqhiWaSyCOKySOa/krcvDNq154uCNFUiSYTMBChoRqPsaZTCD0/H9Fd0ty+QHCoe2Kqe+FGpoq6W5I8LvHPv3QKoSMporHsgS1WSDtUnxIH+AirVe3zeOsQQhtwjZZmXoGaJXKGh+bGXMKMvkYxvU+HN7SWLqjC+qGz0UQVuwAhUX+AKoSN36LxtdSus/OIGapyhFhNAAPZIlq2ru8YzXa6afNTr/2x1rQSIfR9hkrwx6hYS3erbIaKaLgQNa0WumeE9kroayjS6O2L+qNazjEN15E6xtUjrOkUQluwz8dBKut42kB2fedlPmKDX1qHENpvzpLy8FwmFzYuoT2vB6MBYmKmMINNwjcbpPLmRm54TPElcIFCjE92nHCot7DvNehxduZoa/oRQuhL1BDNIzxqeBCxIYk5iMR8RFGdLtZ/Sbug+AgYfHS4gnUIWbsLYPDQX7+mUwht+k0XjfkQ8cPPeZPLL4TKHaEIRyjCEYpwhCIcoQhHKMLxPyriL8siL3imjiW0AAAAAElFTkSuQmCC"
-                            alt="Scan to verify ticket" width="150" height="150">
-                    </div>
+                    <div id="qrcode"></div>
 
 
                     <p>
@@ -247,62 +249,112 @@
                 window.location.href =
                     "buy-ticket.html";
 
-            } else {
-
-                const ticket =
-                    JSON.parse(savedTicket);
-
-
-
-
-                document.getElementById(
-                    "visitorName"
-                ).textContent =
-                    ticket.name;
-
-
-                document.getElementById(
-                    "visitorEmail"
-                ).textContent =
-                    ticket.email;
-
-
-                document.getElementById(
-                    "visitDate"
-                ).textContent =
-                    ticket.date;
-
-
-                document.getElementById(
-                    "visitTime"
-                ).textContent =
-                    ticket.time;
-
-
-                document.getElementById(
-                    "ticketType"
-                ).textContent =
-                    ticket.type;
-
-
-                document.getElementById(
-                    "ticketQuantity"
-                ).textContent =
-                    ticket.quantity;
-
-
-                document.getElementById(
-                    "ticketNumber"
-                ).textContent =
-                    ticket.ticketNumber;
-
-
-                document.getElementById(
-                    "ticketPrice"
-                ).textContent =
-                    ticket.total;
-
             }
+
+
+            const ticket =
+                JSON.parse(savedTicket);
+
+
+
+
+            document.getElementById(
+                "visitorName"
+            ).textContent =
+                ticket.name;
+
+
+            document.getElementById(
+                "visitorEmail"
+            ).textContent =
+                ticket.email;
+
+
+            document.getElementById(
+                "visitDate"
+            ).textContent =
+                ticket.date;
+
+
+            document.getElementById(
+                "visitTime"
+            ).textContent =
+                ticket.time;
+
+
+            document.getElementById(
+                "ticketType"
+            ).textContent =
+                ticket.type;
+
+
+            document.getElementById(
+                "ticketQuantity"
+            ).textContent =
+                ticket.quantity;
+
+
+            document.getElementById(
+                "ticketNumber"
+            ).textContent =
+                ticket.ticketNumber;
+
+
+            document.getElementById(
+                "ticketPrice"
+            ).textContent =
+                ticket.total;
+
+
+
+
+
+            const qrData =
+
+                "Harmony Heritage Museum\n" +
+
+                "Ticket: " +
+                ticket.ticketNumber + "\n" +
+
+                "Visitor: " +
+                ticket.name + "\n" +
+
+                "Email: " +
+                ticket.email + "\n" +
+
+                "Date: " +
+                ticket.date + "\n" +
+
+                "Time: " +
+                ticket.time + "\n" +
+
+                "Type: " +
+                ticket.type + "\n" +
+
+                "Quantity: " +
+                ticket.quantity + "\n" +
+
+                "Total: $" +
+                ticket.total;
+
+
+            new QRCode(
+                document.getElementById("qrcode"),
+                {
+                    text: qrData,
+
+                    width: 150,
+
+                    height: 150,
+
+                    colorDark: "#222222",
+
+                    colorLight: "#ffffff",
+
+                    correctLevel:
+                        QRCode.CorrectLevel.H
+                }
+            );
 
         </script>
 
