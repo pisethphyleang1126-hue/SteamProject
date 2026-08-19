@@ -1,65 +1,53 @@
-
-
 const libraryItems = [
     {
+        id: "item0",
+        caption: "គំនូរប្រេង, សតវត្សទី១៩",
+        featured: true,
+        khmerTitle: `គំនូរច្រកទ្វារអង្គរធំ`,
+        khmer: `គំនូរប្រេងមួយបង្ហាញពីប្រាសាទប្រាំមួយមុខមានរូបព្រះភ័ក្ត្រនៅច្រកទ្វារនៃក្រុងអង្គរធំ ដោយមានដំរីមួយចំនួន និងអ្នកដំណើរឆ្លងកាត់ក្រោមទ្វារទោលនៅកណ្ដាលព្រៃដ៏ស្រស់ស្អាត។ ស្នាដៃនេះឆ្លុះបញ្ចាំងពីរបៀបគូររូបប្រាសាទអង្គរនាសតវត្សទី១៩ មុនពេលមានការជួសជុលស្ដារឡើងវិញ ដែលបង្ហាញពីភាពអព្ភូតហេតុនៃព្រៃឈើដែលបានលូតលាស់ជាប់នឹងថ្មប្រាសាទអស់រយៈពេលជាច្រើនសតវត្ស។ រូបភាពនេះក៏ជាសក្ខីភាពមួយស្តីពីរបៀបដែលអ្នកគូររូបជនបរទេស និងអ្នកស្រុកបានមើលឃើញកេរដំណែលនៃអរិយធម៌ខ្មែរនាសម័យនោះ។`
+    },
+    {
         id: "item1",
-        caption: "Manuscript, 19th c.",
-        englishTitle: `Royal Chronicle Fragments`,
+        caption: "សាស្ត្រា, សតវត្សទី១៩",
         khmerTitle: `ព្រះរាជពង្សាវតារ`,
-        english: `Palm-leaf manuscript pages recording royal genealogies and court events, preserved under climate-controlled glass.`,
-        khmer: `ទំព័រសាស្ត្រាស្លឹករឹតកត់ត្រាពង្សាវតារនៃព្រះមហាក្សត្រ និងព្រឹត្តិការណ៍ក្នុងព្រះបរមរាជវាំង ដែលរក្សាទុកក្រោមកញ្ចក់ត្រួតពិនិត្យសីតុណ្ហភាព។`
+        khmer: `ទំព័រសាស្ត្រាស្លឹករឹតកត់ត្រាពង្សាវតារនៃព្រះមហាក្សត្រ និងព្រឹត្តិការណ៍សំខាន់ៗនានាដែលកើតឡើងក្នុងព្រះបរមរាជវាំង។ អត្ថបទត្រូវបានចារឹកដោយអក្សរខ្មែរបុរាណ ហើយផ្ទុកនូវព័ត៌មានស្តីពីអំណាចនយោបាយ ទំនាក់ទំនងរវាងរាជវង្ស និងព្រឹត្តិការណ៍ប្រវត្តិសាស្ត្រសំខាន់ៗ។ បច្ចុប្បន្ន ឯកសារទាំងនេះត្រូវបានរក្សាទុកយ៉ាងប្រុងប្រយ័ត្នក្រោមកញ្ចក់ត្រួតពិនិត្យសីតុណ្ហភាព និងសំណើម ដើម្បីការពារកុំឲ្យខូចខាតតាមពេលវេលា។`
     },
     {
         id: "item2",
-        caption: "Photograph, 1932",
-        englishTitle: `Village Life Photographs`,
+        caption: "រូបថត, ១៩៣២",
         khmerTitle: `រូបថតជីវិតភូមិ`,
-        english: `A donated collection of silver-gelatin prints documenting daily rural life before the museum's founding.`,
-        khmer: `ជាបណ្ដុំរូបថតដែលបានឧបត្ថម្ភ កត់ត្រាជីវិតប្រចាំថ្ងៃនៅជនបទ មុនពេលបង្កើតសារមន្ទីរនេះ។`
+        khmer: `ជាបណ្ដុំរូបថតឌ្បិកជីលេទីនប្រាក់ដែលបានឧបត្ថម្ភដល់សារមន្ទីរ កត់ត្រាទិដ្ឋភាពជីវិតប្រចាំថ្ងៃនៅតំបន់ជនបទ មុនពេលបង្កើតសារមន្ទីរនេះឡើង។ រូបភាពទាំងនេះបង្ហាញពីសកម្មភាពកសិកម្ម ទំនៀមទម្លាប់សហគមន៍ និងស្ថាបត្យកម្មផ្ទះសម្បែងបែបប្រពៃណី ដែលភាគច្រើនលែងមានទៀតហើយសព្វថ្ងៃនេះ។ វាជាឯកសារមួយដ៏មានតម្លៃសម្រាប់អ្នកស្រាវជ្រាវផ្នែកសង្គមវិទ្យា និងអ្នកគូររូបចង់យល់ដឹងពីរបៀបរស់នៅរបស់បុព្វបុរសខ្មែរ។`
     },
     {
         id: "item3",
-        caption: "Map, hand-drawn",
-        featured: true,
-        englishTitle: `Cartography of the River Basin`,
+        caption: "ផែនទី, គូរដោយដៃ",
         khmerTitle: `ផែនទីអាងទន្លេ`,
-        english: `Hand-drawn survey maps charting settlements along the river, annotated by early museum founders.`,
-        khmer: `ផែនទីស្ទង់ដៃដែលបង្ហាញពីទីតាំងភូមិឋានតាមដងទន្លេ ដោយមានកំណត់ចំណាំពីស្ថាបនិកដំបូងរបស់សារមន្ទីរ។`
+        khmer: `ជាផែនទីស្ទង់ដៃដ៏ល្អិតល្អន់ បង្ហាញពីទីតាំងភូមិឋានតាមដងទន្លេ ផ្លូវទឹក និងព្រំដែនដីធ្លីនានា ដែលបានគូរឡើងដោយក្រុមស្ថាបនិកដំបូងរបស់សារមន្ទីរ។ លើផែនទីមានកំណត់ចំណាំជាច្រើនស្តីពីឈ្មោះភូមិ ចំណុចប្រយោជន៍ដីធ្លី និងផ្លូវធ្វើដំណើរសំខាន់ៗ។ ផែនទីនេះមិនត្រឹមតែជាឯកសារភូមិសាស្ត្រប៉ុណ្ណោះទេ ថែមទាំងឆ្លុះបញ្ចាំងពីទស្សនវិស័យរបស់អ្នកគូរផែនទីនៅសម័យនោះទៀតផង។`
     },
     {
         id: "item4",
-        caption: "Recording, audio",
-        englishTitle: `Elders' Oral History Archive`,
+        caption: "សម្លេងថត",
         khmerTitle: `ប័ណ្ណសារប្រវត្តិសាស្ត្រផ្ទាល់មាត់`,
-        english: `Recorded interviews with community elders, transcribed and indexed for research use in the reading room.`,
-        khmer: `ការសម្ភាសន៍ដែលបានថតជាមួយចាស់ទុំក្នុងសហគមន៍ ត្រូវបានចម្លងជាអក្សរ និងរៀបចំសម្រាប់ការស្រាវជ្រាវនៅបន្ទប់អាន។`
+        khmer: `សម្លេងសម្ភាសន៍ជាមួយចាស់ទុំក្នុងសហគមន៍ជុំវិញតំបន់ ត្រូវបានថតទុក ចម្លងជាអក្សរ និងរៀបចំសន្ទស្សន៍ដ៏ត្រឹមត្រូវ សម្រាប់ការស្រាវជ្រាវនៅបន្ទប់អាន។ ខ្លឹមសារនៃការសម្ភាសន៍រួមមានរឿងព្រេងប្រជាប្រិយ បទពិសោធន៍ជីវិត និងការចងចាំពីព្រឹត្តិការណ៍ប្រវត្តិសាស្ត្រនៃសហគមន៍។ ការសម្ភាសន៍ទាំងនេះជួយថែរក្សានូវចំណេះដឹង និងវប្បធម៌មិនសរសេរ ដែលអាចនឹងបាត់បង់ទៅតាមកាលពេលប្រសិនបើមិនបានកត់ត្រាទុក។`
     },
     {
         id: "item5",
-        caption: "Manuscript, folio",
-        englishTitle: `Temple Inscriptions Rubbings`,
+        caption: "សាស្ត្រា, ទំព័រ",
         khmerTitle: `ការជូតអក្សរចារឹកលើប្រាសាទ`,
-        english: `Paper rubbings of stone temple inscriptions, made to protect the originals from repeated handling.`,
-        khmer: `ការជូតច្បាប់ចម្លងលើក្រដាសនៃអក្សរចារឹកលើថ្មប្រាសាទ ធ្វើឡើងដើម្បីការពារច្បាប់ដើមពីការប៉ះពាល់ញឹកញាប់។`
+        khmer: `ការជូតច្បាប់ចម្លងលើក្រដាសនៃអក្សរចារឹកលើថ្មប្រាសាទ ធ្វើឡើងតាមបច្ចេកទេសបុរាណ ដើម្បីការពារច្បាប់ដើមពីការប៉ះពាល់ញឹកញាប់ពីដៃមនុស្ស និងអាកាសធាតុ។ អក្សរចារឹកទាំងនេះផ្ទុកនូវព័ត៌មានសំខាន់ៗស្តីពីប្រវត្តិសាស្ត្រ សាសនា និងច្បាប់នៃសម័យអង្គរ។ អ្នកស្រាវជ្រាវប្រើប្រាស់ការជូតទាំងនេះជាឯកសារយោងសំខាន់ សម្រាប់ការសិក្សាភាសា និងអក្សរសាស្ត្របុរាណខ្មែរ។`
     },
     {
         id: "item6",
-        caption: "Ledger, bound",
-        englishTitle: `Founders' Correspondence`,
+        caption: "សៀវភៅបញ្ជី",
         khmerTitle: `លិខិតឆ្លងឆ្លើយស្ថាបនិក`,
-        english: `Letters and ledgers from the museum's founding committee, tracing the institution's early years.`,
-        khmer: `សំបុត្រ និងសៀវភៅបញ្ជីពីគណៈកម្មការស្ថាបនិកសារមន្ទីរ ដែលបង្ហាញពីដំណាក់កាលដំបូងនៃស្ថាប័ននេះ។`
+        khmer: `សំបុត្រ និងសៀវភៅបញ្ជីជាច្រើនក្បាលពីគណៈកម្មការស្ថាបនិកសារមន្ទីរ ដែលកត់ត្រាទុកនូវការសម្រេចចិត្ត ការចរចា និងផែនការនានាក្នុងដំណាក់កាលដំបូងនៃការបង្កើតស្ថាប័ននេះ។ តាមរយៈឯកសារទាំងនេះ អ្នកអានអាចយល់ដឹងកាន់តែច្បាស់ពីចក្ខុវិស័យ និងការលំបាកដែលអ្នកស្ថាបនិកបានជួបប្រទះ ក្នុងការកសាងសារមន្ទីរឲ្យក្លាយជាកន្លែងអភិរក្សកេរដំណែលបែបនេះ។`
     },
     {
         id: "item7",
-        caption: "Logbook, workshop",
-        englishTitle: `Restoration Workshop Records`,
+        caption: "កំណត់ត្រាសិក្ខាសាលា",
         khmerTitle: `កំណត់ត្រាសិក្ខាសាលាជួសជុល`,
-        english: `Logs and technical notes from the conservation team detailing how fragile items in the collection were cleaned, repaired, and stabilized.`,
-        khmer: `កំណត់ត្រា និងកំណត់ចំណាំបច្ចេកទេសពីក្រុមអភិរក្ស ដែលពិពណ៌នាអំពីរបៀបសម្អាត ជួសជុល និងធ្វើឲ្យមានស្ថេរភាពនៃវត្ថុងាយបែកបាក់ក្នុងបណ្ដុំសម្ភារៈនេះ។`
+        khmer: `កំណត់ត្រា និងកំណត់ចំណាំបច្ចេកទេសយ៉ាងលម្អិតពីក្រុមអភិរក្ស ដែលពិពណ៌នាអំពីជំហាននីមួយៗនៃការសម្អាត ជួសជុល និងធ្វើឲ្យមានស្ថេរភាពនៃវត្ថុងាយបែកបាក់ក្នុងបណ្ដុំសម្ភារៈរបស់សារមន្ទីរ។ ឯកសារនេះរួមមានវិធីសាស្ត្រការងារ សម្ភារៈដែលបានប្រើប្រាស់ និងបញ្ហាប្រឈមផ្សេងៗដែលក្រុមការងារបានជួប ក្នុងការថែរក្សាកេរដំណែលឲ្យបានយូរអង្វែង។`
     }
-
- 
 ];
 
 
@@ -75,37 +63,11 @@ function renderLibraryCards() {
         return `
             <div class="info-card${featuredClass}">
                 <div class="info-img-placeholder${placeholderClass}" data-caption="${item.caption || ""}"></div>
-                <h3 id="${item.id}-title">${item.englishTitle}</h3>
-                <p id="${item.id}-text">${item.english}</p>
-                <button class="translate" id="${item.id}-btn" data-id="${item.id}">Khmer</button>
+                <h3 id="${item.id}-title" class="khmer-title">${item.khmerTitle}</h3>
+                <p id="${item.id}-text" class="khmer-text">${item.khmer}</p>
             </div>
         `;
     }).join("");
-
-    // wire up each translate button
-    libraryItems.forEach(function (item) {
-        const button = document.getElementById(item.id + "-btn");
-        if (!button) return;
-
-        button.onclick = function () {
-            const title = document.getElementById(item.id + "-title");
-            const text = document.getElementById(item.id + "-text");
-
-            if (button.textContent === "Khmer") {
-                title.textContent = item.khmerTitle;
-                text.textContent = item.khmer;
-                title.classList.add("khmer-title");
-                text.classList.add("khmer-text");
-                button.textContent = "English";
-            } else {
-                title.textContent = item.englishTitle;
-                text.textContent = item.english;
-                title.classList.remove("khmer-title");
-                text.classList.remove("khmer-text");
-                button.textContent = "Khmer";
-            }
-        };
-    });
 }
 
 document.addEventListener("DOMContentLoaded", renderLibraryCards);

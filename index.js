@@ -18,13 +18,12 @@ const greeting = document.querySelector('.greeting');
 const quote = document.querySelector('.home-quote p');
 
 function playHomeAnimation() {
-    
+
     [heading1, heading2, greeting, quote].forEach(el => {
         el.classList.remove('play-right', 'play-right-delay', 'play-rise', 'play-left');
-        void el.offsetWidth; 
+        void el.offsetWidth;
     });
 
-    // re-add classes to replay
     heading1.classList.add('play-right');
     heading2.classList.add('play-right-delay');
     greeting.classList.add('play-rise');
@@ -47,7 +46,7 @@ const observer = new IntersectionObserver((entries) => {
             playHomeAnimation();
         }
     });
-}, { threshold: 0.6 }); 
+}, { threshold: 0.6 });
 
 observer.observe(homeSection);
 
@@ -98,7 +97,7 @@ const translations = {
 Object.keys(translations).forEach(function (buttonId) {
 
     const button = document.getElementById(buttonId);
-    if (!button) return; 
+    if (!button) return;
 
     button.onclick = function () {
 
@@ -133,3 +132,67 @@ Object.keys(translations).forEach(function (buttonId) {
 
 const footerYear = document.getElementById('footer-year');
 if (footerYear) footerYear.textContent = new Date().getFullYear();
+
+
+const securityImages = [
+    "sensor1.jpg",
+    "sensor2.jpg",
+    "sensor3.jpg"
+];
+
+const securityImage = document.getElementById("threeimg5");
+
+const securitySlider = securityImage?.parentElement;
+
+const previousButton = securitySlider?.querySelector(".prev");
+const nextButton = securitySlider?.querySelector(".next");
+
+let securityCurrentImage = 0;
+
+function showSecurityImage() {
+
+    if (!securityImage) return;
+
+    securityImage.style.backgroundImage =
+        `url("${securityImages[securityCurrentImage]}")`;
+
+}
+
+
+
+if (previousButton) {
+
+    previousButton.addEventListener("click", () => {
+
+        securityCurrentImage--;
+
+        if (securityCurrentImage < 0) {
+            securityCurrentImage = securityImages.length - 1;
+        }
+
+        showSecurityImage();
+
+    });
+
+}
+
+
+
+if (nextButton) {
+
+    nextButton.addEventListener("click", () => {
+
+        securityCurrentImage++;
+
+        if (securityCurrentImage >= securityImages.length) {
+            securityCurrentImage = 0;
+        }
+
+        showSecurityImage();
+
+    });
+
+}
+
+
+showSecurityImage();

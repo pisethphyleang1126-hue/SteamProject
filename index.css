@@ -573,7 +573,7 @@ body {
     background-color: hsl(60, 26%, 89%);
 }
 
-/* ===== reused header just for context ===== */
+
 
 header h1 {
     font-family: Arial, Helvetica, sans-serif;
@@ -587,7 +587,6 @@ header p {
     font-family: 'Lora', serif;
 }
 
-/* ===== museum info section ===== */
 .museum-info {
     width: 90%;
     margin: auto;
@@ -651,15 +650,15 @@ header p {
     border: 1px solid #e8ddc5;
 }
 
-/* #bb9c5d */
+
 .info-img-placeholder {
     width: 100%;
     height: 180px;
-    /* background: repeating-linear-gradient(135deg,
+    background: repeating-linear-gradient(135deg,
             #f4ecd8,
             #f4ecd8 10px,
             #efe4c8 10px,
-            #efe4c8 20px); */
+            #efe4c8 20px);
     position: relative;
     display: flex;
     align-items: center;
@@ -674,14 +673,12 @@ header p {
 .info-img-placeholder {
     width: 100%;
     height: 260px;
-    /* was 180px */
     overflow: hidden;
-    /* add this line */
-    /* background: repeating-linear-gradient(135deg,
+    background: repeating-linear-gradient(135deg,
             #f4ecd8,
             #f4ecd8 10px,
             #efe4c8 10px,
-            #efe4c8 20px); */
+            #efe4c8 20px);
     position: relative;
     display: flex;
     align-items: center;
@@ -716,6 +713,15 @@ header p {
     height: 99%;
     border: none;
     background-image: url(garden.jpg);
+    object-fit: cover;
+    object-position: center;
+    transform: scaleY(1.35);
+
+}
+#threeimg0 {
+    height: 99%;
+    border: none;
+    background-image: url(museum-model-upsidedown.png);
     object-fit: cover;
     object-position: center;
     transform: scaleY(1.35);
@@ -870,7 +876,7 @@ header p {
     background-color: hsl(41, 43%, 94%);
 }
 
-/* Khmer title */
+
 .info-card h3.khmer-title {
     font-family: "Moul", serif;
     font-size: 18px;
@@ -880,7 +886,7 @@ header p {
     letter-spacing: 0.5px;
 }
 
-/* Khmer paragraph */
+
 .info-card p.khmer-text {
     font-family: "Battambang", system-ui;
     font-size: 14px;
@@ -993,9 +999,7 @@ header p {
         grid-template-columns: 1fr;
     }
 }
-/* ===== Library page — extends index.css ===== */
 
-/* ===== Library page — extends index.css ===== */
 
 .lib-hero {
     width: 100%;
@@ -1081,8 +1085,90 @@ header p {
     border-radius: 6px;
 }
 
-/* ===== catalog section tweaks ===== */
 
 .lib-catalog {
     padding-top: 20px;
+}
+
+
+.image-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-slider .threedimg {
+    width: 100%;
+    height: 100%;
+    min-height: 230px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: background-image 0.3s ease;
+}
+
+
+.slider-btn {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+
+    font-size: 35px;
+    line-height: 35px;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s;
+}
+
+
+.slider-btn.prev {
+    left: 12px;
+}
+
+
+.slider-btn.next {
+    right: 12px;
+}
+
+
+.slider-btn:hover {
+    background: rgba(187, 156, 93, 0.95);
+    transform: translateY(-50%) scale(1.08);
+}
+
+
+@media (max-width: 600px) {
+
+    .slider-btn {
+        width: 38px;
+        height: 38px;
+
+        font-size: 28px;
+    }
+
+    .slider-btn.prev {
+        left: 8px;
+    }
+
+    .slider-btn.next {
+        right: 8px;
+    }
 }
