@@ -516,13 +516,13 @@ main .home h1 {
     opacity: 0;
     color: hsl(40, 45%, 55%);
     animation: slideFromRight 1.2s ease-out forwards,
-        /* jump 2s ease-in-out 2s infinite; */
+      
 }
 
-/* stagger the second heading line slightly after the first */
+
 main .home h1:nth-of-type(2) {
     animation: slideFromRight 1.2s ease-out 0.3s forwards,
-        /* jump 2s ease-in-out 2s infinite; */
+   
 }
 
 main .home .greeting {
@@ -950,4 +950,97 @@ header p {
     .footer-container {
         grid-template-columns: 1fr;
     }
+}
+/* ===== Library page — extends index.css ===== */
+
+/* ===== Library page — extends index.css ===== */
+
+.lib-hero {
+    width: 100%;
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: linear-gradient(135deg, #ffffff 0%, #fdf6e3 50%, #fff9e6 100%);
+}
+
+.lib-hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.lib-hero .section-label {
+    color: #bb9c5d;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+
+.lib-hero h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: #0d1b2a;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.lib-hero .about-tagline {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: #bb9c5d;
+    font-size: 17px;
+    margin-bottom: 18px;
+}
+
+.lib-hero-text {
+    font-family: 'Lora', Georgia, serif;
+    color: #333;
+    font-size: 15.5px;
+    line-height: 1.8;
+}
+
+/* ===== toolbar ===== */
+
+.lib-toolbar {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 0;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.lib-search {
+    flex: 1 1 320px;
+    padding: 10px 16px;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 14px;
+    color: #0d1b2a;
+    background: #ffffff;
+    border: 1px solid #e8ddc5;
+    border-radius: 6px;
+}
+
+.lib-search:focus {
+    outline: none;
+    border-color: #bb9c5d;
+}
+
+.lib-filter {
+    flex: 0 1 220px;
+    padding: 10px 12px;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 14px;
+    color: #0d1b2a;
+    background: #ffffff;
+    border: 1px solid #e8ddc5;
+    border-radius: 6px;
+}
+
+/* ===== catalog section tweaks ===== */
+
+.lib-catalog {
+    padding-top: 20px;
 }

@@ -18,10 +18,10 @@ const greeting = document.querySelector('.greeting');
 const quote = document.querySelector('.home-quote p');
 
 function playHomeAnimation() {
-    // remove classes to reset
+    
     [heading1, heading2, greeting, quote].forEach(el => {
         el.classList.remove('play-right', 'play-right-delay', 'play-rise', 'play-left');
-        void el.offsetWidth; // force reflow so the browser "forgets" the animation
+        void el.offsetWidth; 
     });
 
     // re-add classes to replay
@@ -31,15 +31,15 @@ function playHomeAnimation() {
     quote.classList.add('play-left');
 }
 
-// play on initial load
+
 window.addEventListener('DOMContentLoaded', playHomeAnimation);
 
-// play when clicking "Home" in nav
+
 document.querySelectorAll('a[href="#home"]').forEach(link => {
     link.addEventListener('click', playHomeAnimation);
 });
 
-// play when scrolling back into view
+
 const homeSection = document.querySelector('#home');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -47,7 +47,7 @@ const observer = new IntersectionObserver((entries) => {
             playHomeAnimation();
         }
     });
-}, { threshold: 0.6 }); // fires when 60% of the section is visible
+}, { threshold: 0.6 }); 
 
 observer.observe(homeSection);
 
@@ -95,39 +95,10 @@ const translations = {
     }
 };
 
-
 Object.keys(translations).forEach(function (buttonId) {
 
     const button = document.getElementById(buttonId);
-
-    button.onclick = function () {
-
-        const card = button.closest(".info-card");
-        const title = card.querySelector("h3");
-        const text = card.querySelector("p");
-
-        if (button.textContent === "Khmer") {
-
-            title.textContent = translations[buttonId].khmerTitle;
-            text.textContent = translations[buttonId].khmer;
-
-            button.textContent = "English";
-
-        } else {
-
-            title.textContent = translations[buttonId].englishTitle;
-            text.textContent = translations[buttonId].english;
-
-            button.textContent = "Khmer";
-
-        }
-
-    };
-
-});
-Object.keys(translations).forEach(function (buttonId) {
-
-    const button = document.getElementById(buttonId);
+    if (!button) return; 
 
     button.onclick = function () {
 
@@ -159,4 +130,6 @@ Object.keys(translations).forEach(function (buttonId) {
     };
 
 });
-document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+const footerYear = document.getElementById('footer-year');
+if (footerYear) footerYear.textContent = new Date().getFullYear();

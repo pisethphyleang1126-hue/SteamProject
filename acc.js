@@ -19,6 +19,47 @@ const infoContent = {
     }
 };
 
+
+const CUSTOMERS_KEY = 'museumCustomers'; 
+const SESSION_KEY = 'museumCurrentUser';   
+
+
+
+function getCustomers() {
+    try {
+        const data = localStorage.getItem(CUSTOMERS_KEY);
+        return data ? JSON.parse(data) : [];
+    } catch (err) {
+        console.error('Could not read customers from storage:', err);
+        return [];
+    }
+}
+
+function saveCustomers(customers) {
+    try {
+        localStorage.setItem(CUSTOMERS_KEY, JSON.stringify(customers));
+    } catch (err) {
+        console.error('Could not save customers to storage:', err);
+    }
+}
+
+function findCustomerByEmail(email) {
+    return getCustomers().find(c => c.email.toLowerCase() === email.toLowerCase());
+}
+
+function setSession(email) {
+    localStorage.setItem(SESSION_KEY, email);
+}
+
+function clearSession() {
+    localStorage.removeItem(SESSION_KEY);
+}
+
+function getSessionEmail() {
+    return localStorage.getItem(SESSION_KEY);
+}
+
+
 signinTab.addEventListener('click', () => {
     signinTab.classList.add('active');
     signupTab.classList.remove('active');
@@ -39,18 +80,55 @@ signupTab.addEventListener('click', () => {
     infoText.innerHTML = infoContent.signup.text;
 });
 
+
+
 signinForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const email = document.getElementById('siEmail').value;
-    showProfile(email.split('@')[0], email);
+
+    const email = document.getElementById('siEmail').value.trim();
+    const password = document.getElementById('siPassword').value;
+
+    const existing = findCustomerByEmail(email);
+
+    if (!existing) {
+        alert("No account found with that email. Please sign up first.");
+        return;
+    }
+
+    if (existing.password !== password) {
+        alert("Incorrect password. Please try again.");
+        return;
+    }
+
+    setSession(existing.email);
+    showProfile(existing.name, existing.email);
+    signinForm.reset();
 });
+
+
 
 signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const name = document.getElementById('suName').value;
-    const email = document.getElementById('suEmail').value;
+
+    const name = document.getElementById('suName').value.trim();
+    const email = document.getElementById('suEmail').value.trim();
+    const password = document.getElementById('suPassword').value;
+
+    if (findCustomerByEmail(email)) {
+        alert("An account with that email already exists. Please sign in instead.");
+        return;
+    }
+
+    const customers = getCustomers();
+    customers.push({ name, email, password });
+    saveCustomers(customers);
+
+    setSession(email);
     showProfile(name, email);
+    signupForm.reset();
 });
+
+
 
 function showProfile(name, email) {
     document.getElementById('profileName').textContent = name;
@@ -64,10 +142,30 @@ function showProfile(name, email) {
     profileView.classList.remove('hidden');
 }
 
-document.getElementById('logoutBtn').addEventListener('click', () => {
+function showAuthForms() {
     profileView.classList.add('hidden');
     document.querySelector('.info').classList.remove('hidden');
     document.querySelector('.account-header').classList.remove('hidden');
     tabs.classList.remove('hidden');
     signinTab.click();
+}
+
+document.getElementById('logoutBtn').addEventListener('click', () => {
+    clearSession();
+    showAuthForms();
+});
+
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    const sessionEmail = getSessionEmail();
+    if (!sessionEmail) return;
+
+    const customer = findCustomerByEmail(sessionEmail);
+    if (customer) {
+        showProfile(customer.name, customer.email);
+    } else {
+       
+        clearSession();
+    }
 });

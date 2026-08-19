@@ -3,15 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Harmony Heritage Musuem - Library</title>
+        <title>Harmony Heritage Museum - Library</title>
         <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="library.css">
         <link rel="icon" href="harmony-round.png">
         <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Bayon&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Hanuman:wght@100..900&family=Montenegrin+Gothic+One&family=Moul&family=Noto+Sans+Khmer:wght@100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-            rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link
@@ -31,7 +27,7 @@
 
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html #aboutus">About us</a></li>
+                    <li><a href="index.html#aboutus">About us</a></li>
                     <li><a href="index.html#arch">Architecture</a></li>
                     <li><a href="library.html">Library</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
@@ -44,7 +40,66 @@
                 </div>
             </nav>
         </header>
-        
+
+        <main>
+           
+            <section class="lib-hero">
+                <div class="lib-hero-inner">
+                    <p class="section-label">The Archives</p>
+                    <h2>Library &amp; Reading Room</h2>
+                    <p class="about-tagline">Where the museum's written memory lives</p>
+                    <p class="lib-hero-text">
+                        Housed in the museum's east wing, our library holds manuscripts, photographs,
+                        maps, and oral history recordings gathered over generations. Browse the
+                        collection below, or visit in person to consult the archive with our staff.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Search / filter bar -->
+            <section class="lib-toolbar">
+                <input type="text" class="lib-search" placeholder="Search the catalog by title, author, or subject…">
+                <select class="lib-filter">
+                    <option value="all">All categories</option>
+                    <option value="manuscripts">Manuscripts</option>
+                    <option value="photographs">Photographs</option>
+                    <option value="maps">Maps</option>
+                    <option value="oral-history">Oral Histories</option>
+                </select>
+            </section>
+
+            <!-- Catalog grid -->
+            <section class="museum-info lib-catalog">
+                <div class="info-header">
+                    <p class="section-label">Collection</p>
+                    <h2>Featured Holdings</h2>
+                    <p class="about-tagline">A sample of what's available to readers</p>
+                </div>
+
+                <div class="info-grid" id="catalog-grid">
+                    
+                </div>
+
+                <div class="info-footer">
+                    <div class="info-footer-item">
+                        <h4>Reading Room Hours</h4>
+                        <ul>
+                            <li>Tuesday - Sunday, 10:00 AM - 5:00 PM</li>
+                            <li>Closed Mondays and public holidays</li>
+                            <li>Appointment recommended for rare items</li>
+                        </ul>
+                    </div>
+                    <div class="info-footer-item">
+                        <h4>Access &amp; Requests</h4>
+                        <p>
+                            Most of the general collection is open for browsing. Rare manuscripts and
+                            fragile photographs require a request submitted at least 48 hours in
+                            advance through the front desk or by emailing the archive team.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
 
         <footer class="site-footer">
             <div class="footer-container">
@@ -60,12 +115,12 @@
                         Preserving Our Past, Inspiring Our Future.
                     </p>
                 </div>
-        
+
                 <div class="footer-links">
                     <h4>Explore</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html #aboutus">About us</a></li>
+                        <li><a href="index.html#aboutus">About us</a></li>
                         <li><a href="index.html#arch">Architecture</a></li>
                         <li><a href="library.html">Library</a></li>
                         <li><a href="index.html#contact">Contact</a></li>
@@ -73,7 +128,7 @@
                         <li><a target="_blank" href="buy-ticket.html">Get ticket</a></li>
                     </ul>
                 </div>
-        
+
                 <div class="footer-links" id="contact">
                     <h4>Visit us</h4>
                     <ul>
@@ -83,7 +138,7 @@
                         <li>+855 12 345 678</li>
                     </ul>
                 </div>
-        
+
                 <div class="footer-links">
                     <h4>Follow us</h4>
                     <ul class="footer-social">
@@ -93,11 +148,12 @@
                     </ul>
                 </div>
             </div>
-        
+
             <div class="footer-bottom">
                 <p>&copy; <span id="footer-year"></span> Harmony Heritage Museum. All rights reserved.</p>
             </div>
         </footer>
-        <script src="index.js"></script>
+        
+        <script src="library.js"></script>
     </body>
 </html>

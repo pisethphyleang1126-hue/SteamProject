@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="ticket.css">
 
 
-        
+
         <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js">
         </script>
 
@@ -32,7 +32,7 @@
             <div class="ticket">
 
 
-                <!-- TOP -->
+
 
                 <div class="ticket-top">
 
@@ -61,7 +61,6 @@
 
 
 
-                <!-- CUSTOMER INFORMATION -->
 
                 <div class="ticket-info">
 
@@ -192,7 +191,7 @@
 
 
 
-                <!-- QR CODE -->
+
 
                 <div class="qr-section">
 
@@ -212,7 +211,6 @@
 
 
 
-                <!-- BOTTOM -->
 
                 <div class="ticket-bottom">
 
@@ -238,12 +236,12 @@
 
         <script>
 
-            // Get saved ticket information
+
             const savedTicket =
                 localStorage.getItem("harmonyTicket");
 
 
-            // If there is no ticket
+
             if (!savedTicket) {
 
                 alert("No ticket information found.");
@@ -258,7 +256,7 @@
                 JSON.parse(savedTicket);
 
 
-            // Display customer information
+
 
             document.getElementById(
                 "visitorName"
@@ -309,7 +307,7 @@
 
 
 
-            // QR CODE DATA
+
 
             const qrData =
 

@@ -221,8 +221,7 @@ button .backBtn:hover {
 
 .account-box {
     position: relative;
-    /* anchor for the back button */
-    /* ...keep the rest as-is */
+   
 }
 
 .backBtn {
