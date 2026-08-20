@@ -93,7 +93,7 @@
             const total = document.getElementById("total");
 
 
-            // Calculate total price
+           
             function calculateTotal() {
 
                 const price =
@@ -121,7 +121,7 @@
             );
 
 
-            // Send customer information to ticket page
+           
             form.addEventListener("submit", function (event) {
 
                 event.preventDefault();
@@ -158,13 +158,12 @@
                     price * qty;
 
 
-                // Generate ticket number
                 const ticketNumber =
                     "HHM-" +
                     Date.now().toString().slice(-8);
 
 
-                // Store information
+         
                 const ticketData = {
 
                     name: name,
@@ -192,7 +191,7 @@
                 );
 
 
-                // Go to ticket page
+              
                 window.location.href = "ticket.html";
 
             });

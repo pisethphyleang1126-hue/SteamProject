@@ -12,6 +12,9 @@ toggle.addEventListener('click', () => {
     }
     isPlaying = !isPlaying;
 });
+
+
+
 const heading1 = document.querySelector('.home h1:nth-of-type(1)');
 const heading2 = document.querySelector('.home h1:nth-of-type(2)');
 const greeting = document.querySelector('.greeting');
@@ -37,6 +40,102 @@ window.addEventListener('DOMContentLoaded', playHomeAnimation);
 document.querySelectorAll('a[href="#home"]').forEach(link => {
     link.addEventListener('click', playHomeAnimation);
 });
+
+isTranslated = true;
+greetingTranslate.onclick = function () {
+
+    const expectation = document.querySelector(".about-container h1")
+    const welcome = document.querySelector(".about-container h2")
+    const tagLine = document.querySelector(".about-container .about-tagline")
+    const aboutText1 = document.querySelector(".about-container #about-text1")
+    const aboutText2 = document.querySelector(".about-container #about-text2")
+    const aboutText3 = document.querySelector(".about-container #about-text3")
+    const greetingTranslate = document.getElementById("greetingTranslate")
+
+    if (isTranslated) {
+        expectation.textContent = `ការរំពឹងទុក`
+        welcome.textContent = `សូមស្វាគមន៍មកកាន់សារមន្ទីរបេតិកភណ្ឌ ហាម៉ូនី`
+        tagLine.textContent = `កន្លែងដែលបេតិកភណ្ឌខ្មែររួមបញ្ចូលជាមួយនវានុវត្តន៍ទំនើប។`
+        aboutText1.textContent = `សារមន្ទីររបស់យើងមិនមែនគ្រាន់តែជាកន្លែងសម្រាប់តាំងបង្ហាញប្រវត្តិសាស្ត្រប៉ុណ្ណោះទេ។ វាជាទីកន្លែងដែលអ្នកទស្សនាអាចស្វែងយល់ពីវប្បធម៌ដ៏សម្បូរបែប សិល្បៈប្រពៃណី និងសម្បត្តិប្រវត្តិសាស្ត្ររបស់កម្ពុជា តាមរយៈបទពិសោធន៍ទំនើប និងអន្តរកម្ម។`
+        aboutText2.textContent = `ការរចនាសារមន្ទីររបស់យើងបានរួមបញ្ចូលស្ថាបត្យកម្មខ្មែរបុរាណជាមួយបច្ចេកវិទ្យាទំនើប ដើម្បីបង្កើតជាទីតាំងដ៏ពិសេសមួយ ដែលតំណាងឱ្យទាំងអតីតកាល និងអនាគតរបស់យើង។`
+        aboutText3.textContent = `ដើម្បីធានាសុវត្ថិភាពដល់វត្ថុបុរាណ និងសម្បត្តិវប្បធម៌ដ៏មានតម្លៃ សារមន្ទីរត្រូវបានបំពាក់ដោយ ប្រព័ន្ធសុវត្ថិភាពឧបករណ៍ចាប់សញ្ញាចលនា PIR ដែលជួយរកឃើញចលនាដែលគ្មានការអនុញ្ញាត និងផ្តល់ការការពារដែលអាចទុកចិត្តបានសម្រាប់វត្ថុវប្បធម៌ដ៏មានតម្លៃ។`
+        greetingTranslate.textContent = `English`
+
+    }
+    else {
+        expectation.textContent = `Expectation`
+        welcome.textContent = `Welcome to Harmony Heritage Museum`
+        tagLine.textContent = `Where Khmer heritage meets modern innovation.`
+        aboutText1.textContent = `Our museum is more than a place to display history. It is a space where visitors can discover Cambodia's rich culture, traditional art, and historical treasures through a modern and interactive experience.`
+        aboutText2.textContent = `Our museum is more than a place to display history. It is a space where visitors can discover Cambodia's rich culture, traditional art, and historical treasures through a modern and interactive experience.`
+        aboutText3.textContent = `To ensure the safety of priceless artifacts, the museum is equipped with a PIR Motion Sensor Security System, which helps detect unauthorized movement and provides reliable protection for valuable cultural objects.`
+        greetingTranslate.textContent = `Khmer`
+    }
+
+    isTranslated = !isTranslated
+
+}
+
+reasonTranslate.onclick = function (){
+
+    const reasonTranslate = document.getElementById("reasonTranslate")
+    const aboutwhy = document.querySelector(".about-why h3")
+    const whylist1 = document.getElementById("whylist1")
+    const whylist2 = document.getElementById("whylist2")
+    const whylist3 = document.getElementById("whylist3")
+    const whylist4 = document.getElementById("whylist4")
+    const whylist5 = document.getElementById("whylist5")
+
+    if(isTranslated){
+
+        aboutwhy.textContent = `ហេតុអ្វីបានជាអ្នកគួរមកទស្សនាសារមន្ទីររបស់យើង?`
+        whylist1.textContent = `ស្វែងយល់ពីសម្រស់នៃប្រវត្តិសាស្ត្រ និងវប្បធម៌ខ្មែរ`
+        whylist2.textContent = `ទទួលយកបទពិសោធន៍ពីបច្ចេកវិទ្យាសារមន្ទីរទំនើប`
+        whylist3.textContent = `ទទួលយកបទពិសោធន៍ពីបច្ចេកវិទ្យាសារមន្ទីរទំនើប`
+        whylist4.textContent = `រីករាយជាមួយបរិយាកាសដែលមានសុវត្ថិភាព ផាសុកភាព និងការការពារល្អ`
+        whylist5.textContent = `ចូលរួមគាំទ្រការអភិរក្សបេតិកភណ្ឌវប្បធម៌របស់កម្ពុជា`
+        reasonTranslate.textContent = `English`
+
+    }
+
+    else{
+
+        aboutwhy.textContent = `Why visit our museum?`
+        whylist1.textContent = `Discover the beauty of Khmer history and culture`
+        whylist2.textContent = `Experience modern museum technology`
+        whylist3.textContent = `Learn through interactive exhibitions`
+        whylist4.textContent = `Enjoy a safe, comfortable, and secure environment`
+        whylist5.textContent = `Support the preservation of Cambodia's cultural heritage`
+        reasonTranslate.textContent = `Khmer`
+
+    }
+
+    isTranslated = !isTranslated
+}
+
+visionTranslate.onclick = function (){
+    const visionTranslate = document.getElementById("visionTranslate")
+    const ourvision = document.querySelector(".about-vision h3")
+    const textvision = document.querySelector(".about-vision p")
+
+    if(isTranslated){
+
+        
+        ourvision.textContent = `ចក្ខុវិស័យរបស់យើង`
+        textvision.textContent = `ក្លាយជាគោលដៅវប្បធម៌ឈានមុខមួយ ដែលអភិរក្សបេតិកភណ្ឌរបស់កម្ពុជា ព្រមទាំងទទួលយកនវានុវត្តន៍ និងបំផុសគំនិតដល់មនុស្សជំនាន់ក្រោយ។`
+        visionTranslate.textContent = `English`
+    }
+    else{
+        ourvision.textContent = `Our vision`
+        textvision.textContent = ` To become a leading cultural destination that preserves Cambodia's heritage while embracing innovation and inspiring future generations.`
+        visionTranslate.textContent = `Khmer`
+    }
+
+    isTranslated = !isTranslated
+}
+
+
+
 
 
 const homeSection = document.querySelector('#home');

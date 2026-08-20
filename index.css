@@ -196,7 +196,10 @@ main .home::before {
     pointer-events: none;
     z-index: 0;
 }
-
+#greetingTranslate{
+    transform: translateX(-160px);
+    
+}
 .home h1 {
     font-family: Arial, Helvetica, sans-serif;
     color: black;
@@ -307,17 +310,24 @@ main .home::before {
     font-family: sans-serif;
     margin-bottom: 10px;
 }
-
+.about-container h1 {
+    font-family: "Moul", serif;
+    color: #0d1b2a;
+}
 .about-container h2 {
     font-family: Arial, Helvetica, sans-serif;
+    font-family: "Battambang", system-ui;
     font-weight: 700;
     color: #0d1b2a;
     font-size: 25px;
     margin-bottom: 8px;
 }
-
+.about-container p {
+    font-family: "Battambang", system-ui;
+}
 .about-tagline {
     font-family: 'Times New Roman', Times, serif;
+    font-family: "Battambang", system-ui;
     font-style: italic;
     color: #bb9c5d;
     font-size: 18px;
@@ -352,6 +362,7 @@ main .home::before {
 .about-why h3,
 .about-vision h3 {
     font-family: Arial, Helvetica, sans-serif;
+    font-family: "Battambang", system-ui;
     color: #0d1b2a;
     font-size: 20px;
     margin-bottom: 14px;
@@ -382,6 +393,7 @@ main .home::before {
 
 .about-vision p {
     font-family: 'Lora', Georgia, serif;
+    font-family: "Battambang", system-ui;
     color: #333;
     font-size: 15px;
     line-height: 1.7;
@@ -473,7 +485,6 @@ main .home::before {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Entrance animations */
 @keyframes riseUp {
     from {
         opacity: 0;

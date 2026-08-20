@@ -1,0 +1,111 @@
+
+
+@keyframes libSlideFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes libSlideFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes libFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.lib-hero .section-label {
+    opacity: 0;
+    animation: libSlideFromLeft 0.8s ease-out 0.1s forwards;
+}
+
+.lib-hero h2 {
+    opacity: 0;
+    animation: libSlideFromRight 0.8s ease-out 0.25s forwards;
+}
+
+.lib-hero .about-tagline {
+    opacity: 0;
+    animation: libSlideFromLeft 0.8s ease-out 0.4s forwards;
+}
+
+.lib-hero-text {
+    opacity: 0;
+    animation: libFadeUp 0.9s ease-out 0.55s forwards;
+}
+
+
+.info-header .section-label {
+    opacity: 0;
+    animation: libSlideFromRight 0.8s ease-out 0.1s forwards;
+}
+
+.info-header h2 {
+    opacity: 0;
+    animation: libSlideFromLeft 0.8s ease-out 0.25s forwards;
+}
+
+.info-header .about-tagline {
+    opacity: 0;
+    animation: libSlideFromRight 0.8s ease-out 0.4s forwards;
+}
+
+
+.info-footer-item:nth-child(1) {
+    opacity: 0;
+    animation: libSlideFromLeft 0.8s ease-out 0.7s forwards;
+}
+
+.info-footer-item:nth-child(2) {
+    opacity: 0;
+    animation: libSlideFromRight 0.8s ease-out 0.85s forwards;
+}
+
+.info-footer-item h4,
+.info-footer-item li,
+.info-footer-item p {
+    opacity: 1;
+   
+}
+
+.footer-brand {
+    opacity: 0;
+    animation: libSlideFromLeft 0.8s ease-out 0.2s forwards;
+}
+
+.footer-links:nth-of-type(1) {
+    opacity: 0;
+    animation: libSlideFromRight 0.8s ease-out 0.35s forwards;
+}
+
+.footer-links:nth-of-type(2) {
+    opacity: 0;
+    animation: libSlideFromLeft 0.8s ease-out 0.5s forwards;
+}
+
+.footer-links:nth-of-type(3) {
+    opacity: 0;
+    animation: libSlideFromRight 0.8s ease-out 0.65s forwards;
+}
