@@ -197,7 +197,7 @@ main .home::before {
     z-index: 0;
 }
 #greetingTranslate{
-    transform: translateX(-160px);
+    
     
 }
 .home h1 {
