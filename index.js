@@ -234,8 +234,8 @@ if (footerYear) footerYear.textContent = new Date().getFullYear();
 
 
 const securityImages = [
-    "sensor1.jpg",
     "sensor2.jpg",
+    "sensor1.jpg",
     "sensor3.jpg"
 ];
 

@@ -25,8 +25,23 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    /* ADD THIS */
 }
-
+.account-box::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: -50px;
+    width: 140px;
+    height: 120px;
+    border-radius: 50%;
+    background:transparent;
+    box-shadow: -25px 10px burlywood;
+    z-index: 0;
+    pointer-events: none;
+}
 .account-header {
     text-align: center;
     margin-bottom: 20px;
@@ -123,7 +138,7 @@ body {
     height: 70px;
     line-height: 70px;
     border-radius: 50%;
-    background: #0d1b2a;
+    background: burlywood;
     color: #bb9c5d;
     font-size: 30px;
     margin: 0 auto 15px;
@@ -141,11 +156,11 @@ body {
 }
 
 .logoutBtn {
-    background-color: #0d1b2a;
+    background-color: burlywood;
 }
 
 .logoutBtn:hover {
-    background-color: #bb9c5d;
+    background-color: azure;
 }
 
 .logo {
@@ -244,4 +259,7 @@ button .backBtn:hover {
     color: #bb9c5d;
     border: 1px solid #bb9c5d;
     
+}
+.avatar svg {
+    fill: white;
 }
