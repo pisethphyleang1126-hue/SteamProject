@@ -1,17 +1,17 @@
-const audio = document.getElementById('bg-music');
-const toggle = document.getElementById('soundToggle');
-let isPlaying = false;
+// const audio = document.getElementById('bg-music');
+// const toggle = document.getElementById('soundToggle');
+// let isPlaying = false;
 
-toggle.addEventListener('click', () => {
-    if (!isPlaying) {
-        audio.play();
-        toggle.innerHTML = '<i class="ti ti-volume"></i>';
-    } else {
-        audio.pause();
-        toggle.innerHTML = '<i class="ti ti-volume-3"></i>';
-    }
-    isPlaying = !isPlaying;
-});
+// toggle.addEventListener('click', () => {
+//     if (!isPlaying) {
+//         audio.play();
+//         toggle.innerHTML = '<i class="ti ti-volume"></i>';
+//     } else {
+//         audio.pause();
+//         toggle.innerHTML = '<i class="ti ti-volume-3"></i>';
+//     }
+//     isPlaying = !isPlaying;
+// });
 
 
 
